@@ -1,4 +1,4 @@
-import graph_and_vertex as gv
+import morphograph as gv
 import data as d
 
 g = gv.Graph()
@@ -17,3 +17,4 @@ for item in d.test_data:
 
 for name, v in g.vertices.items():
     print(name, "->", v.kind)
+
