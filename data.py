@@ -26,14 +26,11 @@ test_data = [
     {"word": "predict", "definition": "say before", "type2": "verb", "kind": "word",
      "prefix": "pre", "root": "dict", "suffix": "No suffix"},
 
-    {"word": "dictionary", "definition": "book of words", "type2": "noun", "kind": "word",
-     "prefix": "No prefix", "root": "dict", "suffix": "ary"},
-
     {"word": "biology", "definition": "study of life", "type2": "noun", "kind": "word",
-     "prefix": "bio", "root": "log", "suffix": "y"},
+     "prefix": "No prefix", "root": "bio", "suffix": "logy"},
 
     {"word": "geology", "definition": "study of earth", "type2": "noun", "kind": "word",
-     "prefix": "geo", "root": "log", "suffix": "y"},
+     "prefix": "No prefix", "root": "geo", "suffix": "logy"},
 
     {"word": "autograph", "definition": "self writing", "type2": "noun", "kind": "word",
      "prefix": "auto", "root": "graph", "suffix": "No suffix"},
@@ -102,20 +99,18 @@ test_data = [
      "prefix": "auto", "root": "bio", "suffix": "graphy"},
 
     {"word": "geography", "definition": "study of earth", "type2": "noun", "kind": "word",
-     "prefix": "geo", "root": "graph", "suffix": "y"},
+     "prefix": "No prefix", "root": "geo", "suffix": "graphy"},
 
     {"word": "telephone", "definition": "sound from afar", "type2": "noun", "kind": "word",
-     "prefix": "tele", "root": "phon", "suffix": "e"},
+     "prefix": "tele", "root": "phon", "suffix": "No suffix"},
 
     {"word": "microphone", "definition": "device for small sounds", "type2": "noun", "kind": "word",
-     "prefix": "micro", "root": "phon", "suffix": "e"},
-
-    {"word": "biology", "definition": "study of life", "type2": "noun", "kind": "word",
-     "prefix": "bio", "root": "log", "suffix": "y"},
+     "prefix": "micro", "root": "phon", "suffix": "No suffix"},
 
     {"word": "logical", "definition": "related to logic", "type2": "adj", "kind": "word",
-     "prefix": "No prefix", "root": "log", "suffix": "ical"},
+     "prefix": "No prefix", "root": "logic", "suffix": "al"},
 
     {"word": "illogical", "definition": "not logical", "type2": "adj", "kind": "word",
-     "prefix": "il", "root": "log", "suffix": "ical"},
+     "prefix": "il", "root": "logic", "suffix": "al"},
+
 ]
