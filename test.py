@@ -8,7 +8,7 @@ for item in d.test_data:
         item["word"],
         item["definition"],
         item["type2"],
-        item["kind"],
+        item["category"],
         item.get("prefix", "No prefix"),
         item.get("root", "No root"),
         item.get("suffix", "No suffix")
@@ -16,5 +16,5 @@ for item in d.test_data:
     g.add_vertex(v)
 
 for name, v in g.vertices.items():
-    print(name, "->", v.kind)
+    print(name, "->", v.category)
 

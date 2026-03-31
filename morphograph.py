@@ -1,11 +1,11 @@
 class Vertex:   
-    #create vertex word: the word itself, difinition: common do I need to clarify what it is!, type2: noun, verb, adjective or an adverb, kind in case it's a stand alone word, prefix, suffix
-    def __init__(self, word:str, definition:str ,type2:str, kind:str,
+    #create vertex word: the word itself, difinition: common do I need to clarify what it is!, type2: noun, verb, adjective or an adverb, category in case it's a stand alone word, prefix, suffix
+    def __init__(self, word:str, definition:str ,type2:str, category:str,
          prefix:str = "No prefix", root:str = "No root", suffix:str = "No suffix"): #No vertex-level relation  (those belong to edges)
         self.word = word
         self.definition = definition
         self.type2 = type2 # noun/ verb whatever!
-        self.kind = kind # word, affixes or a root :D
+        self.category = category # word, affixes or a root :D
         self.prefix = prefix
         self.root = root
         self.suffix = suffix
@@ -61,7 +61,7 @@ class Graph:
         v = Vertex(word = value,
                    definition = "No definition",
                    type2 = "affix",
-                   kind = "affix") 
+                   category = "affix") 
         self.vertices[value] = v
         return v
         
