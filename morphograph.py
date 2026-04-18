@@ -1,30 +1,62 @@
 class Vertex:   
     #create vertex word: the word itself, difinition: common do I need to clarify what it is!, type2: noun, verb, adjective or an adverb, category in case it's a stand alone word, prefix, suffix
-    def __init__(self, word:str, definition:str ,type2:str, category:str,
-         prefix:str = "No prefix", root:str = "No root", suffix:str = "No suffix"): #No vertex-level relation  (those belong to edges)
-        self.word = word
-        self.definition = definition
-        self.type2 = type2 # noun/ verb whatever!
-        self.category = category # word, affixes or a root :D
-        self.prefix = prefix
-        self.root = root
-        self.suffix = suffix
-        self.adjacent = {
-            "has_prefix" : [],
-            "has_root" : [],
-            "has_suffix":[]
-        } # family: {relation: [objects]}
+    def __init__(self, word:str, definition:str ,p_o_s:str, category:str,
+         prefix:str = None, root:str = None , suffix:str = None): #No vertex-level relation  (those belong to edges)
+        
+        # Here will have the attributes of object categorized to two groups one(relational) which is relevent to our use in the graph and other group(intrinsic) is for extra details
+        # intrinsic attributes
 
-    # Private Helper method DO NOT CALL use useless method instead
-    def _adjoin(self,vertex, has_prefix:bool = False , has_root:bool = False, has_suffix:bool = False):
-        if has_prefix:
+        self.word = word
+        self.morph = {
+                      "definition" :definition,
+                      "p_o_s"      :  p_o_s, # noun/ verb whatever!
+                      "category"   : category, # word, affix or a root :D
+                      "prefix"     : prefix,
+                      "root"       : root,
+                      "suffix"     : suffix
+                                             }
+
+        # relational attributes
+        # in the adjacency I'll have three main keys and will store in their lists relevent words with shared affix
+        self.adjacent = {
+              "has_prefix" : [],    
+              "has_root"   : [],
+              "has_suffix" : []
+                               } # family: {relation: [objects]}
+
+        # internal state
+        self.active_prefix = False
+        self.active_root   = False
+        self.active_suffix = False
+
+        if isinstance(self.morph["prefix"], str):
+            self.active_prefix = True
+
+        if isinstance(self.morph["root"], str):
+            self.active_root   = True
+        
+        if isinstance(self.morph["suffix"], str):
+            self.active_suffix = True
+
+
+    # Private Helper method DO NOT CALL, use useless method(_link) instead
+    # This method meant to connect diffferent vertices by adding them to eachothers's adjacency dict
+    def _adjoin (self, vertex):
+        prefix = vertex.morph["prefix"] 
+        root   = vertex.morph["root"]
+        suffix = vertex.morph["suffix"]
+
+        if isinstance(prefix, str):
             self.adjacent["has_prefix"].append(vertex)
-        if has_root:
+
+        if isinstance(root, str):
             self.adjacent["has_root"].append(vertex)
-        if has_suffix:
+
+        if isinstance(suffix, str):
             self.adjacent["has_suffix"].append(vertex)
 
-    
+#TODO: Refactor Graph to match new changes
+#Pending  
 class Graph:
     # Stores all vertices by name.
     def __init__(self):
