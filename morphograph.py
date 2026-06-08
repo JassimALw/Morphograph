@@ -1,9 +1,12 @@
 class Vertex:   
-    #create vertex word: the word itself, difinition: common do I need to clarify what it is!, type2: noun, verb, adjective or an adverb, category in case it's a stand alone word, prefix, suffix
+    #create vertex word: the literal text, definition: meaning of the word or morpheme.
+    #p_o_s: part of speech(noun, verb, adjective,adverb).
+    #category: indentifies whether it is a full word, prefix, root, or suffix.
+    #prefix/root/suffix: optional morphological components for linking
     def __init__(self, word:str, definition:str ,p_o_s:str, category:str,
          prefix:str = None, root:str = None , suffix:str = None): #No vertex-level relation  (those belong to edges)
         
-        # Here will have the attributes of object categorized to two groups one(relational) which is relevent to our use in the graph and other group(intrinsic) is for extra details
+        # Here will have the attributes of the object categorized to two groups one(relational) which is relevent to our use in the graph and other group(intrinsic) is for extra details
         # intrinsic attributes
 
         self.word = word
